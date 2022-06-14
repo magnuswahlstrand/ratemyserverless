@@ -1,6 +1,6 @@
 # ratemyserverless
 
-## TODO
+## TODO 
 * [ ] Load stacks from db
 * [ ] Refresh markdown file
 * [ ] Add a new stack from form
@@ -19,5 +19,5 @@
 * [ ] Support other sources than Github
 
 ## Done
-
 * [x] Configure basic CDK stack
+* [x] Refactor: split frontend into components
