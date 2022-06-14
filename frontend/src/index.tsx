@@ -12,8 +12,7 @@ root.render(
         <MantineProvider
             theme={{
                 fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"',
-
-        }}
+            }}
             withGlobalStyles withNormalizeCSS
         >
 
