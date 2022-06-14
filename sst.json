@@ -1,5 +1,5 @@
 {
-  "name": "ratemyserverless2",
-  "region": "us-east-1",
+  "name": "ratemyserverless",
+  "region": "eu-west-1",
   "main": "stacks/index.ts"
 }
