@@ -40,10 +40,29 @@ go run examples/editor/*.go
 
 ![example](docs/particles_distance.gif)
 `
-export const serverless = [
+export const stacks = [
     {
+        "PK": "STACK#2Aej0RvNG2dH2F2q3YYVWLSQrWI",
+        "SK": "STACK#2Aej0RvNG2dH2F2q3YYVWLSQrWI",
+        "created_at": "2022-06-14 21:46:50",
+        "description": "# Title here",
+        "repo": {
+            "type": "github",
+            "owner": "magnuswahlstrand",
+            "name": "ratemyserverless",
+        },
+        "tags": ["sst", "dynamodb"],
+        "updated_at": "2022-06-17 19:46:50",
         name: "Rate My Serverless 2",
-        repo: "github.com/magnuswahlstrand/ratemyserverless",
+    },
+    {
+        id: "1",
+        name: "Rate My Serverless 2",
+        repo: {
+            type: "github",
+            owner: "magnuswahlstrand",
+            name: "ratemyserverless",
+        },
         markdown_description: markdown_description_2,
         comments: [
             {
@@ -65,8 +84,13 @@ export const serverless = [
         updated_at: "2022-05-11",
     },
     {
+        id: "2",
         name: "Rate My Serverless",
-        repo: "github.com/magnuswahlstrand/ratemyserverless",
+        repo: {
+            type: "github",
+            owner: "magnuswahlstrand",
+            name: "ratemyserverless",
+        },
         markdown_description: markdown_description,
         description: "This website!",
         comments: [

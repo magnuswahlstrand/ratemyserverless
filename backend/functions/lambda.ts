@@ -3,25 +3,24 @@ import {DynamoDB} from "aws-sdk";
 
 const documentClient = new DynamoDB.DocumentClient();
 
+const tableName = process.env.tableName ?? ""
+
 export const handler: APIGatewayProxyHandlerV2 = async (event) => {
-    const tableName = process.env.tableName ?? ""
+    const ret = await documentClient.scan({TableName: tableName}).promise()
 
-    var params = {
-        TableName: tableName,
-        Key: {
-            PK: "STACK#2AXIg1tOKa5RVST0KZmiXVaiMQt",
-            SK: "STACK#2AXIg1tOKa5RVST0KZmiXVaiMQt",
-        }
-    };
+    if (!ret.Items) {
+        return {statusCode: 500, body: "no items found"}
+    }
 
-    console.log(params)
-    // console.log(dynamoDb)
-    const ret = await documentClient.get(
-        params
-    ).promise();
+    const resp = ret.Items.map(item => {
+        item['id'] = item['PK'].replace("STACK#", "")
+        delete item['PK']
+        delete item['SK']
+        return item
+    })
 
     return {
         statusCode: 200,
-        body: JSON.stringify(ret),
+        body: JSON.stringify(resp),
     };
 };

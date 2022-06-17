@@ -1,7 +1,6 @@
 # ratemyserverless
 
-## TODO 
-* [ ] Load stacks from db
+## TODO
 * [ ] Refresh markdown file
 * [ ] Add a new stack from form
 * [ ] Add architecture diagram
@@ -21,3 +20,5 @@
 ## Done
 * [x] Configure basic CDK stack
 * [x] Refactor: split frontend into components
+* [x] Load stacks from db
+* [x] Add skeleton while loading

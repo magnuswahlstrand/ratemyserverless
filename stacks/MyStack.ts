@@ -1,4 +1,4 @@
-import {Api, Function, StackContext, Table} from "@serverless-stack/resources";
+import {Api, Function, ReactStaticSite, StackContext, Table} from "@serverless-stack/resources";
 
 export function MyStack({stack}: StackContext) {
     const table = new Table(stack, "MyTable", {
@@ -33,11 +33,19 @@ export function MyStack({stack}: StackContext) {
         routes: {
             "GET /notes": listStacksFn,
             "GET /note": getStackFn,
-        }
+        },
+        cors: true,
     });
 
-    // Show API endpoint in output
+    const site = new ReactStaticSite(stack, "ReactSite", {
+        path: "frontend",
+        environment: {
+            REACT_APP_API_URL: api.url,
+        }
+    })
+
     stack.addOutputs({
+        SiteUrl: site.url,
         ApiEndpoint: api.url,
     });
 }
